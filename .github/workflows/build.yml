@@ -18,3 +18,12 @@ jobs:
           version: latest
           use-tool-cache: true
       - run: mdbook build
+      - run: |
+          # pull first incase another build was running and deployed whilst this one was running
+          git pull origin master
+
+          git add . 
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m "build book"
+          git push origin master

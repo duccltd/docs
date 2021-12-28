@@ -1,6 +1,6 @@
 # Summary
 
-- [Overview](./overview.md)
+- [Enlay Documentation](./overview.md)
 - [Getting started](./getting_started.md)
 - [API](./api/api.md)
   - [Language SDKs](./api/sdks.md)

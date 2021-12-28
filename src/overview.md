@@ -1,4 +1,4 @@
-# Overview
+# Enlay Documentation
 
 Native sponsored advertisements for in-house advertising. Enlay provides the platform and development tools required for businesses to natively sponsor products.
 

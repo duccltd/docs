@@ -81,8 +81,10 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <img src="logo.png" style="width: 100%"/>
-                <ol class="chapter"><li class="chapter-item expanded "><a href="overview.html"><strong aria-hidden="true">1.</strong> Enlay Documentation</a></li><li class="chapter-item expanded "><a href="getting_started.html"><strong aria-hidden="true">2.</strong> Getting started</a></li><li class="chapter-item expanded "><a href="api/api.html"><strong aria-hidden="true">3.</strong> API</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="api/sdks.html"><strong aria-hidden="true">3.1.</strong> Language SDKs</a></li><li class="chapter-item expanded "><a href="api/tracking.html"><strong aria-hidden="true">3.2.</strong> View &amp; Click tracking</a></li><li class="chapter-item expanded "><a href="api/placements.html"><strong aria-hidden="true">3.3.</strong> Creating placements</a></li></ol></li><li class="chapter-item expanded "><a href="bidding.html"><strong aria-hidden="true">4.</strong> Bidding models</a></li></ol>
+                <a href="https://enlay.io">
+                    <img src="logo.png" style="width: 100%"/>
+                </a>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="overview.html"><strong aria-hidden="true">1.</strong> Enlay Documentation</a></li><li class="chapter-item expanded "><a href="getting_started.html"><strong aria-hidden="true">2.</strong> Getting started</a></li><li class="chapter-item expanded "><a href="api/api.html"><strong aria-hidden="true">3.</strong> API</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="api/authentication.html"><strong aria-hidden="true">3.1.</strong> Authentication</a></li><li class="chapter-item expanded "><a href="api/sdks.html"><strong aria-hidden="true">3.2.</strong> Language SDKs</a></li><li class="chapter-item expanded "><a href="api/promotables.html"><strong aria-hidden="true">3.3.</strong> Fetching promotables</a></li><li class="chapter-item expanded "><a href="api/placements.html"><strong aria-hidden="true">3.4.</strong> Creating placements</a></li><li class="chapter-item expanded "><a href="api/tracking.html"><strong aria-hidden="true">3.5.</strong> View &amp; click tracking</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.6.</strong> Managing Ads</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.7.</strong> Conversion Tracking</div></li></ol></li><li class="chapter-item expanded "><a href="bidding.html"><strong aria-hidden="true">4.</strong> Bidding models</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -169,25 +171,46 @@
 <h2 id="contents-1"><a class="header" href="#contents-1">Contents</a></h2>
 <ol>
 <li><a href="api/./sdks.html">Language SDKs</a></li>
-<li><a href="api/./tracking.html">View &amp; Click tracking</a></li>
+<li><a href="api/./authentication.html">Authentication</a></li>
+<li><a href="api/./promotables.html">Fetching promotables</a></li>
 <li><a href="api/./placements.html">Creating placements</a></li>
+<li><a href="api/./tracking.html">View &amp; click tracking</a></li>
 </ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="authentication"><a class="header" href="#authentication">Authentication</a></h1>
+<p>Some of our API endpoints require an API token. This token <strong>must be kept secret</strong> and never exposed to users, or they could perform administrative actions on your behalf.</p>
+<h2 id="finding-your-api-token"><a class="header" href="#finding-your-api-token">Finding your API token</a></h2>
+<p>You can find your API token by going to the <a href="https://publisher.enlay.io">Publisher Dashboard</a> &gt; <code>Publisher</code> &gt; <code>Your API token</code>.</p>
+<p><img src="api/authentication_api_token.png" alt="" /></p>
+<h2 id="authenticating-with-the-api"><a class="header" href="#authenticating-with-the-api">Authenticating with the API</a></h2>
+<p>Set the HTTP <code>Authorization</code> header to the API token.</p>
+<pre><code>Authorization: eyJ0eXj2dWdawd....
+</code></pre>
+<h3 id="authenticating-with-an-sdk"><a class="header" href="#authenticating-with-an-sdk">Authenticating with an SDK</a></h3>
+<p>If you're using one of our <a href="api/./sdks.html">SDKs</a>, please refer to the docs.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="language-sdks"><a class="header" href="#language-sdks">Language SDKs</a></h1>
 <p>We have open source libraries for the following languages so you can easily integrate with enlay.</p>
 <p>Docs for each language can be found in each SDK's repository.</p>
-<table><thead><tr><th>Language</th><th><a href="api/tracking.html">View &amp; Click tracking</a></th><th><a href="api/placements.html">Creating Placements</a></th><th>Managing Ads</th></tr></thead><tbody>
-<tr><td><a href="https://github.com/duccltd/enlay-node">JavaScript/Node</a></td><td>Yes</td><td>Yes</td><td>No</td></tr>
+<table><thead><tr><th>Language</th><th><a href="api/tracking.html">View &amp; Click tracking</a></th><th><a href="api/placements.html">Creating Placements</a></th><th>Managing Ads</th><th>Conversion Tracking</th></tr></thead><tbody>
+<tr><td><a href="https://github.com/duccltd/enlay-node">JavaScript/Node</a></td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr>
 </tbody></table>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="view--click-tracking"><a class="header" href="#view--click-tracking">View &amp; Click tracking</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="fetching-promotables"><a class="header" href="#fetching-promotables">Fetching promotables</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="creating-placements"><a class="header" href="#creating-placements">Creating placements</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="view--click-tracking"><a class="header" href="#view--click-tracking">View &amp; click tracking</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="bidding-models"><a class="header" href="#bidding-models">Bidding models</a></h1>
+<p>This is when advertisements are displayed and how much advertisers are paying for them.</p>
+<p>Currently we support our <em>Budget share</em> model instead of more traditional models like <em>Cost Per Click</em> (CPC).</p>
 <h2 id="budget-share"><a class="header" href="#budget-share">Budget share</a></h2>
-<h2 id="cpc"><a class="header" href="#cpc">CPC</a></h2>
-<p>Coming soon.</p>
-<h2 id="cpm"><a class="header" href="#cpm">CPM</a></h2>
-<p>Coming soon.</p>
-<h2 id="cpa"><a class="header" href="#cpa">CPA</a></h2>
-<p>Coming soon.</p>
+<p>With the budget share bidding model, impressions are distributed to each ad depending on how large their budgets are.</p>
+<p>For example with the following advertisements:</p>
+<ul>
+<li><em>Foo</em> = $10/day</li>
+<li><em>Bar</em> = $90/day</li>
+</ul>
+<p><em>Foo</em> will receive 10% of the impressions that day, whilst <em>Bar</em> receives 90%.</p>
+<p>This model ensures that advertisers get a fair share of the impressions, instead of 1 high budget advertisement getting all the traffic, whilst still giving larger advertisers a majority.</p>
+<p>It also makes click/impression fraud near impossible as common methods like refreshing the page hundreds of times can't be targetted at a single advertisement and therefore the ratio is not affected.</p>
+<h2 id="cpccpmcparoas"><a class="header" href="#cpccpmcparoas">CPC/CPM/CPA/ROAS</a></h2>
+<p>We plan to add these models in the future depending on demand. Let us know if these models would help your business!</p>
 
                     </main>
 

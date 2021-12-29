@@ -84,7 +84,7 @@
                 <a href="https://enlay.io">
                     <img src="logo.png" style="width: 100%"/>
                 </a>
-                <ol class="chapter"><li class="chapter-item expanded "><a href="overview.html"><strong aria-hidden="true">1.</strong> Enlay Documentation</a></li><li class="chapter-item expanded "><a href="getting_started.html"><strong aria-hidden="true">2.</strong> Getting started</a></li><li class="chapter-item expanded "><a href="api/api.html"><strong aria-hidden="true">3.</strong> API</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="api/authentication.html"><strong aria-hidden="true">3.1.</strong> Authentication</a></li><li class="chapter-item expanded "><a href="api/sdks.html"><strong aria-hidden="true">3.2.</strong> Language SDKs</a></li><li class="chapter-item expanded "><a href="api/promotables.html"><strong aria-hidden="true">3.3.</strong> Fetching promotables</a></li><li class="chapter-item expanded "><a href="api/placements.html"><strong aria-hidden="true">3.4.</strong> Creating placements</a></li><li class="chapter-item expanded "><a href="api/tracking.html"><strong aria-hidden="true">3.5.</strong> View &amp; click tracking</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.6.</strong> Managing Ads</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.7.</strong> Conversion Tracking</div></li></ol></li><li class="chapter-item expanded "><a href="bidding.html"><strong aria-hidden="true">4.</strong> Bidding models</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="overview.html"><strong aria-hidden="true">1.</strong> Enlay Documentation</a></li><li class="chapter-item expanded "><a href="getting_started.html"><strong aria-hidden="true">2.</strong> Getting started</a></li><li class="chapter-item expanded "><a href="api/api.html"><strong aria-hidden="true">3.</strong> API</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="api/authentication.html"><strong aria-hidden="true">3.1.</strong> Authentication</a></li><li class="chapter-item expanded "><a href="api/sdks.html"><strong aria-hidden="true">3.2.</strong> Language SDKs</a></li><li class="chapter-item expanded "><a href="api/promotables.html"><strong aria-hidden="true">3.3.</strong> Fetching promotables</a></li><li class="chapter-item expanded "><a href="api/placements.html"><strong aria-hidden="true">3.4.</strong> Creating placements</a></li><li class="chapter-item expanded "><a href="api/tracking/tracking.html"><strong aria-hidden="true">3.5.</strong> Tracking</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="api/tracking/clicks.html"><strong aria-hidden="true">3.5.1.</strong> Clicks</a></li><li class="chapter-item expanded "><a href="api/tracking/views.html"><strong aria-hidden="true">3.5.2.</strong> Views</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.5.3.</strong> Conversions</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.6.</strong> Managing Ads</div></li></ol></li><li class="chapter-item expanded "><a href="bidding.html"><strong aria-hidden="true">4.</strong> Bidding models</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -174,7 +174,7 @@
 <li><a href="api/./authentication.html">Authentication</a></li>
 <li><a href="api/./promotables.html">Fetching promotables</a></li>
 <li><a href="api/./placements.html">Creating placements</a></li>
-<li><a href="api/./tracking.html">View &amp; click tracking</a></li>
+<li><a href="api/./tracking/tracking.html">Tracking</a></li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="authentication"><a class="header" href="#authentication">Authentication</a></h1>
 <p>Some of our API endpoints require an API token. This token <strong>must be kept secret</strong> and never exposed to users, or they could perform administrative actions on your behalf.</p>
@@ -190,7 +190,7 @@
 <div style="break-before: page; page-break-before: always;"></div><h1 id="language-sdks"><a class="header" href="#language-sdks">Language SDKs</a></h1>
 <p>We have open source libraries for the following languages so you can easily integrate with enlay.</p>
 <p>Docs for each language can be found in each SDK's repository.</p>
-<table><thead><tr><th>Language</th><th><a href="api/tracking.html">View &amp; Click tracking</a></th><th><a href="api/placements.html">Creating Placements</a></th><th>Managing Ads</th><th>Conversion Tracking</th></tr></thead><tbody>
+<table><thead><tr><th>Language</th><th><a href="api/./tracking/tracking.html">View &amp; Click tracking</a></th><th><a href="api/placements.html">Creating Placements</a></th><th>Managing Ads</th><th>Conversion Tracking</th></tr></thead><tbody>
 <tr><td><a href="https://github.com/duccltd/enlay-node">JavaScript/Node</a></td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr>
 </tbody></table>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="fetching-promotables"><a class="header" href="#fetching-promotables">Fetching promotables</a></h1>
@@ -216,7 +216,7 @@
 }
 </code></pre>
 <table><thead><tr><th>Field</th><th>Required</th><th>Description</th><th>Format</th><th>Default</th></tr></thead><tbody>
-<tr><td>slotId</td><td>Yes</td><td>The ID of the slot you'd like to get advertisements for.</td><td>UUID v4</td><td>-</td></tr>
+<tr><td>slotId</td><td>Yes</td><td>The ID of the slot you'd like to get advertisements for.</td><td>UUID v4</td><td></td></tr>
 <tr><td>max</td><td>No</td><td>The maximum number of advertisements you'd like to show for a slot. For example, you may want to have a single slot for the front page of your slot, but on the page you'd like to display 3 ads in different spots.</td><td>Integer</td><td>1</td></tr>
 <tr><td>unique</td><td>No</td><td>When specifying a max of more than 1, setting <code>unique</code> to true ensures that different ads are returned instead of the same one multiple times.</td><td>Boolean</td><td>true</td></tr>
 </tbody></table>
@@ -238,7 +238,50 @@
 <tr><td>id</td><td>Unique ID of this placement</td><td>UUID v4</td></tr>
 <tr><td>advertisementId</td><td>Unique ID of the advertisement showing in this placement</td><td>UUID v4</td></tr>
 </tbody></table>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="view--click-tracking"><a class="header" href="#view--click-tracking">View &amp; click tracking</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="tracking"><a class="header" href="#tracking">Tracking</a></h1>
+<p>Enlay currently supports tracking clicks and views. These are reported by your frontend and visible in the dashboards, from the api and in reports.</p>
+<h2 id="contents-2"><a class="header" href="#contents-2">Contents</a></h2>
+<ol>
+<li><a href="api/tracking/clicks.html">Clicks</a></li>
+<li><a href="api/tracking/views.html">Views</a></li>
+<li>Conversions</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="clicks"><a class="header" href="#clicks">Clicks</a></h1>
+<p>Clicks can be registered by using the placement ID.</p>
+<h2 id="get-httpsapienlayiopplacement_idc"><a class="header" href="#get-httpsapienlayiopplacement_idc">GET <code>https://api.enlay.io/p/{placement_id}/c</code></a></h2>
+<h3 id="authorization"><a class="header" href="#authorization">Authorization</a></h3>
+<p>No authorization is required for this endpoint.</p>
+<h3 id="url-fields"><a class="header" href="#url-fields">URL fields</a></h3>
+<table><thead><tr><th>Field</th><th>Description</th></tr></thead><tbody>
+<tr><td>placement_id</td><td>The ID of the placement that has been clicked</td></tr>
+</tbody></table>
+<h3 id="query-parameters"><a class="header" href="#query-parameters">Query parameters</a></h3>
+<table><thead><tr><th>Field</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody>
+<tr><td>redirect_url</td><td>No</td><td>A URL to redirect users to once they click on the advertisement. With this parameter the response code is set to <code>302</code> with a <code>Location</code> response header.</td><td>https://example.com</td></tr>
+</tbody></table>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="registering-views"><a class="header" href="#registering-views">Registering views</a></h1>
+<p>Views can be registered by using the placement ID.</p>
+<p>This endpoint should be called when an advertisement has been seen. What 'seen' means is up to you, for example:</p>
+<ul>
+<li>When the page has been loaded.</li>
+<li>When a user has scrolled down so that the advertisement is on their screen.</li>
+<li>When a user hovers over the advertisement.</li>
+</ul>
+<h2 id="post-httpsapienlayiopv"><a class="header" href="#post-httpsapienlayiopv">POST <code>https://api.enlay.io/p/v</code></a></h2>
+<h3 id="authorization-1"><a class="header" href="#authorization-1">Authorization</a></h3>
+<p>No authorization is required for this endpoint.</p>
+<h3 id="required-headers"><a class="header" href="#required-headers">Required headers</a></h3>
+<pre><code>Content-Type: application/json
+</code></pre>
+<h3 id="request-body"><a class="header" href="#request-body">Request body</a></h3>
+<pre><code class="language-json">[
+    { &quot;id&quot;: &quot;f85ad1c4-9c67-4218-a2b0-a637f155036f&quot; },
+    { &quot;id&quot;: &quot;8c873628-f6bb-4230-b8ee-3e112c361b3b&quot; }
+]
+</code></pre>
+<table><thead><tr><th>Field</th><th>Description</th></tr></thead><tbody>
+<tr><td>id</td><td>The ID of the placement that has been viewed</td></tr>
+</tbody></table>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="bidding-models"><a class="header" href="#bidding-models">Bidding models</a></h1>
 <p>This is when advertisements are displayed and how much advertisers are paying for them.</p>
 <p>Currently we support our <em>Budget share</em> model instead of more traditional models like <em>Cost Per Click</em> (CPC).</p>

@@ -7,4 +7,4 @@ Enlay is API driven, letting you build the best possible experience for your adv
 1. [Authentication](./authentication.md)
 1. [Fetching promotables](./promotables.md)
 1. [Creating placements](./placements.md)
-1. [View & click tracking](./tracking.md)
+1. [Tracking](./tracking/tracking.md)

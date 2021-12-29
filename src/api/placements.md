@@ -25,11 +25,11 @@ mutation {
 }
 ```
 
-| Field | Required | Description | Format | Default |
-| --- | --- | --- | --- | --- |
-| slotId | Yes | The ID of the slot you'd like to get advertisements for. | UUID v4 | - |
-| max | No | The maximum number of advertisements you'd like to show for a slot. For example, you may want to have a single slot for the front page of your slot, but on the page you'd like to display 3 ads in different spots. | Integer | 1 |
-| unique | No | When specifying a max of more than 1, setting `unique` to true ensures that different ads are returned instead of the same one multiple times. | Boolean | true |
+| Field | Required | Description | Format | Default 
+| --- | --- | --- | --- | --- 
+| slotId | Yes | The ID of the slot you'd like to get advertisements for. | UUID v4 
+| max | No | The maximum number of advertisements you'd like to show for a slot. For example, you may want to have a single slot for the front page of your slot, but on the page you'd like to display 3 ads in different spots. | Integer | 1
+| unique | No | When specifying a max of more than 1, setting `unique` to true ensures that different ads are returned instead of the same one multiple times. | Boolean | true 
 
 ### Response
 
@@ -47,8 +47,8 @@ mutation {
 }
 ```
 
-| Field | Description | Format |
-| --- | --- | --- |
-| timestamp | The time the placement was created | UTC timestamp as RFC3339 |
-| id | Unique ID of this placement | UUID v4 |
-| advertisementId | Unique ID of the advertisement showing in this placement | UUID v4 |
+| Field | Description | Format
+| --- | --- | --- 
+| timestamp | The time the placement was created | UTC timestamp as RFC3339
+| id | Unique ID of this placement | UUID v4
+| advertisementId | Unique ID of the advertisement showing in this placement | UUID v4

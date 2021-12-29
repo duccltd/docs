@@ -195,6 +195,49 @@
 </tbody></table>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="fetching-promotables"><a class="header" href="#fetching-promotables">Fetching promotables</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="creating-placements"><a class="header" href="#creating-placements">Creating placements</a></h1>
+<p>To get an advertisement to display you need to create a <em>placement</em>.</p>
+<p>A <em>placement</em> represents an single showing of an ad.</p>
+<h2 id="graphql-request"><a class="header" href="#graphql-request">GraphQL Request</a></h2>
+<pre><code class="language-graphql">mutation {
+    createPlacements(input: {
+        slotId: &quot;d4af8161-0993-4589-a0d5-f8718b062d93&quot;
+        max: 1
+        unique: true
+    }) {
+        # The time the placement was created
+        timestamp
+
+        # Unique ID of this placement
+        id
+
+        # ID of the advertisement showing in this placement
+        advertisementId
+    }
+}
+</code></pre>
+<table><thead><tr><th>Field</th><th>Required</th><th>Description</th><th>Format</th><th>Default</th></tr></thead><tbody>
+<tr><td>slotId</td><td>Yes</td><td>The ID of the slot you'd like to get advertisements for.</td><td>UUID v4</td><td>-</td></tr>
+<tr><td>max</td><td>No</td><td>The maximum number of advertisements you'd like to show for a slot. For example, you may want to have a single slot for the front page of your slot, but on the page you'd like to display 3 ads in different spots.</td><td>Integer</td><td>1</td></tr>
+<tr><td>unique</td><td>No</td><td>When specifying a max of more than 1, setting <code>unique</code> to true ensures that different ads are returned instead of the same one multiple times.</td><td>Boolean</td><td>true</td></tr>
+</tbody></table>
+<h3 id="response"><a class="header" href="#response">Response</a></h3>
+<pre><code class="language-json">{
+    &quot;data&quot;: {
+        &quot;createPlacements&quot;: [
+            {
+                &quot;timestamp&quot;: &quot;2021-12-29T16:35:53+00:00&quot;,
+                &quot;id&quot;: &quot;3cc60e23-6a81-4958-8c6e-b2a5b9a89267&quot;,
+                &quot;advertisementId&quot;: &quot;015ec88f-5463-4c7e-bf34-362d0c60caba&quot;
+            }
+        ]
+    }
+}
+</code></pre>
+<table><thead><tr><th>Field</th><th>Description</th><th>Format</th></tr></thead><tbody>
+<tr><td>timestamp</td><td>The time the placement was created</td><td>UTC timestamp as RFC3339</td></tr>
+<tr><td>id</td><td>Unique ID of this placement</td><td>UUID v4</td></tr>
+<tr><td>advertisementId</td><td>Unique ID of the advertisement showing in this placement</td><td>UUID v4</td></tr>
+</tbody></table>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="view--click-tracking"><a class="header" href="#view--click-tracking">View &amp; click tracking</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="bidding-models"><a class="header" href="#bidding-models">Bidding models</a></h1>
 <p>This is when advertisements are displayed and how much advertisers are paying for them.</p>

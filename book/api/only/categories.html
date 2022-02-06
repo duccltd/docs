@@ -148,14 +148,47 @@
 <p>Categories are created and set up on the publisher dashboard. You are only able to fetch the categories that you have created through the
 PublisherAPI. Under each category is the collection of <a href="./slots.html">slots</a>.</p>
 <h2 id="graphql-request"><a class="header" href="#graphql-request">GraphQL Request</a></h2>
-<pre><code class="language-graphql">
+<pre><code class="language-graphql">query {
+    currentPublisher {
+        findCategories(input: {
+            publisherId: &quot;e19ie-...&quot;
+            filter: {
+                id: &quot;2319ef-...&quot;
+            }
+        }) {
+            id
+            name
+            description
+            ...
+        }
+    }
+}
 </code></pre>
 <table><thead><tr><th>Field</th><th>Required</th><th>Description</th><th>Format</th><th>Default</th></tr></thead><tbody>
+<tr><td>publisherId</td><td>true</td><td>Your publisher id</td><td>UUID v4</td><td></td></tr>
+<tr><td>filter</td><td>false</td><td>Additional filters for categories</td><td>Category filter</td><td></td></tr>
+</tbody></table>
+<h4 id="category-filter"><a class="header" href="#category-filter">Category filter</a></h4>
+<table><thead><tr><th>Field</th><th>Required</th><th>Description</th><th>Format</th><th>Default</th></tr></thead><tbody>
+<tr><td>id</td><td>true</td><td>Slot identifier</td><td>UUID v4</td><td></td></tr>
 </tbody></table>
 <h3 id="response"><a class="header" href="#response">Response</a></h3>
-<pre><code class="language-json">
+<pre><code class="language-json">{
+  &quot;data&quot;: {
+    &quot;findCategories&quot;: [
+      {
+        &quot;id&quot;: &quot;3cc60e23-6a81-4958-8c6e-b2a5b9a89267&quot;,
+        &quot;name&quot;: &quot;Category name&quot;,
+        &quot;description&quot;: &quot;Description of my category&quot;
+      }
+    ]
+  }
+}
 </code></pre>
 <table><thead><tr><th>Field</th><th>Description</th><th>Format</th></tr></thead><tbody>
+<tr><td>id</td><td>Category id</td><td>UUID v4</td></tr>
+<tr><td>name</td><td>Category name</td><td>String</td></tr>
+<tr><td>description</td><td>Category description</td><td>String</td></tr>
 </tbody></table>
 
                     </main>
